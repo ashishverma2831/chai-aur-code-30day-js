@@ -30,3 +30,25 @@ document.body.removeChild(text5);
 // Task 6
 const text6 = document.getElementById('d');
 document.body.lastChild.remove(text6);
+
+// Task 7
+const image = document.getElementById('image');
+image.src = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";   
+
+// Task 8
+const box = document.getElementById('box');
+box.classList.add('round');
+box.classList.remove('round');
+
+// Task 9
+const text9 = document.getElementById('text9');
+const changeTextButton = document.getElementById('change-text-button');
+changeTextButton.addEventListener('click',()=>{
+    text9.textContent = "Hello World 9 and i'm updated text";
+})
+
+// Task 10
+const changeColorBox = document.getElementById('change-color-box');
+changeColorBox.addEventListener('mouseover',()=>{
+    changeColorBox.style.border = "black 5px solid";
+})
