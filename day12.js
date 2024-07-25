@@ -34,21 +34,35 @@ try {
 }
 
 // Task 4
-class validationError extends Error{
+class validationFailedError extends Error{
     constructor(message){
         super(message);
-        this.name = 'ValidationError';
+        this.name = 'ValidationFailedError';
     }
 }
 
-const errorFunction3 = () => {
+const validateUserInput = (input) => {
     try {
-        throw new validationError('This is a validation error');
+        if(input.trim() === ''){
+            throw new validationFailedError('Input is empty');
+        }
+        return input;
     } catch (error) {
-        console.log("Error caught : "+error.message);
+        if(error.name === 'ValidationFailedError'){
+            console.log("Validation failed : "+error.message);
+        }else{
+            console.log("Undefined error caught : "+error.message);
+        }
+        return false;
     }
 }
-errorFunction3();
+
+const validInput = validateUserInput("Hello");
+console.log(validInput); // Output: Hello
+
+const emptyInput = validateUserInput("");
+console.log(emptyInput); // Output: Validation error: Input cannot be empty! (or null)
+
 
 // Task 5 same in Task 4
 
@@ -85,3 +99,5 @@ fetchData2();
 // Task 8
 fetch("https://api.publicapis.org/entries")
 .catch(error => console.error("Fetch error:", error.message));
+
+// Task 9 same as Task 7
