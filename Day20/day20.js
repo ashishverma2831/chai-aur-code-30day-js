@@ -108,3 +108,14 @@ const clearBothStorages = () => {
 };
 
 clearBothStorages();
+
+
+
+
+
+
+
+// Local storage
+// Stores data in key-value pairs in the browser, and it doesn't expire. This means that data is accessible even after the user closes and reopens their browser or tab. Local storage can store up to 10 MB of data per domain, but it's not secure because it's stored as plain text.
+// Session storage
+// Stores data for a single session, and it's cleared when the browser tab is closed. Session storage can store up to 5 MB of data per domain
