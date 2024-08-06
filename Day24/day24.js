@@ -1,4 +1,4 @@
-const api_key = 'ee2c3f0c8434eeb1477d404839acf343'
+const api_key = ''
 // const city = 'london'
 
 document.getElementById('search-button').addEventListener('click', () => {
@@ -48,7 +48,6 @@ function displayWeatherData(data) {
 function displayForecastData(data) {
     const forecastInfo = document.getElementById('forecast-info');
     forecastInfo.innerHTML = '';
-
     for (let i = 0; i < data.list.length; i += 8) {
         const forecast = data.list[i];
         const date = new Date(forecast.dt * 1000);
